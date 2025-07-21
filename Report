@@ -1,0 +1,18 @@
+A quicksort is an efficient sorting algorithm that follows the divide-and-conquer strategy (GeeksforGeeks, 2025). It works by selecting a pivot element, partitioning the array so that all elements less than the pivot are on its left and all greater elements are on its right, and then recursively applying the same process to the left and right subarrays (GeeksforGeeks, 2025). A randomized quicksort selects a random element as the pivot (GeeksforGeeks, 2025). This method is preferred because it avoids predictable patterns that could lead to the worst-case scenario (GeeksforGeeks, 2025). A randomized quicksort is preferred because choosing poor pivots can cause it to run O(n^2) time, which is bad. It also helps avoid choosing a bad pivot repeatedly which improves the time complexity. This improves the expected (average) time complexity to O(n log n), however the worst time complexity still stays O(n^2) (GeeksforGeeks, 2023). 
+To understand why the expected performance of Randomized Quicksort is O(n log n), we can analyze the number of comparisons using indicator random variables (Malik & Pemmaraju, 2019). Let the input list be x1, x2, x3, …, xn, and let y1, y2, y3, …, yn be the sorted version. We define Xij as a binary random variable that equals 1 is elements yi and yi are compared during the algorithm and 0 otherwise (Malik & Pemmaraju, 2019). Since each pair is compared at most once, the total number of comparisons is the sum of all such indicators (Malik & Pemmaraju, 2019). The expected value expected number of comparisons across all pairs adds up to O(n log n) (Malik & Pemmaraju, 2019).
+Comparison
+  - Randomly generated arrays
+	For the Randomly generated arrays, both randomized quicksort and deterministic quicksort performed the same, the randomized quicksort was a little faster as the input sizes increased. So the time complexity for both would be O(n log n). 
+  - Already sorted arrays
+	For the already sorted arrays, the deterministic quicksort was way slower because of the worst case behavior which always picks the smallest pivot. The randomized quicksort ran better than deterministic quicksort because it avoids the worst case time complexity of O(n^2).
+  - Reverse-sorted arrays
+	For the Reverse-sorted array, the randomized quicksort was much better than deterministic where is kept the time complexity of O(n log n).
+  - Arrays with repeated elements
+	For arrays with repeated elements both the deterministic and randomized quicksort slowed down performance wise. 
+
+References:
+GeeksforGeeks. (2025, April 17). Quick Sort. GeeksforGeeks. https://www.geeksforgeeks.org/dsa/quick-sort-algorithm/
+
+GeeksforGeeks. (2023, September 14). QuickSort using Random Pivoting. GeeksforGeeks. https://www.geeksforgeeks.org/dsa/quicksort-using-random-pivoting/
+
+Malik, J., & Pemmaraju, S. V. (2019, October 22). Lecture 17: Randomized Quicksort [PDF lecture notes]. Department of Computer Science, University of Iowa. https://homepage.cs.uiowa.edu/~sriram/5350/fall19/notes/10.22/10.22.pdf
